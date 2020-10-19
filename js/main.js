@@ -5,15 +5,21 @@ var cycle = 0;
 // richiesta cognome utente
 var cognome = '';
 
-do {
     var cognome = prompt('Inserisci il tuo cognome').trim();
 
-    if (isNaN(cognome)) {
-        var cycle = 1;
-    } else {
-        var cycle = 0;
+    function allLetter(inputtxt) { 
+        var cognome = /^[A-Za-z]+$/;
+
+        if(inputtxt.value.match(cognome)) {
+        alert('Your name have accepted : you can try another');
+        return true;
+        }
+        else {
+        alert('Please input alphabet characters only');
+        return false;
+        }
     }
-} while (cycle = 0);
+
 // } while (typeof cognome !== 'string');
 
 // uppercase first letter if not 
