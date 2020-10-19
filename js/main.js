@@ -16,9 +16,8 @@ do {
 
 } while (typeof cognome !== 'string');
 
-
-//  surname stamp
-document.getElementById("surname").innerHTML = 'Buongiorno ' + cognome;
+// uppercase first letter if not 
+cognome = cognome.substring(0,1).toUpperCase() + cognome.substring(1).toLowerCase();
 
 // push cognome in to database array
 database.push(cognome);
@@ -26,5 +25,26 @@ database.push(cognome);
 // database alphabetical sort
 database.sort();
 
-document.getElementById("list-surname").innerHTML = database;
+// cycle while to create UL
+var surnames = '';
+var count = 0;
+while (count < database.lenght) {
 
+    var surname = database[count];
+
+    surnames += '<li>' + surname + '</li>';
+
+    // counter cycle
+    count++;
+}
+
+
+document.getElementById("surname-list").innerHTML = surnames;
+
+
+
+
+// surname stamp
+document.getElementById("surname").innerHTML = 'Buongiorno ' + cognome;
+// position surname
+document.getElementById("position").innerHTML = 'Occupi la posizione numero ' + database.indexOf(cognome);
