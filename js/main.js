@@ -41,4 +41,5 @@ document.getElementById('list').innerHTML = surnames;
 // surname stamp
 document.getElementById("surname").innerHTML = 'Buongiorno ' + cognome;
 // position surname
-document.getElementById("position").innerHTML = 'Occupi la posizione numero ' + database.indexOf(cognome);
+position = database.indexOf(cognome) + 1; 
+document.getElementById("position").innerHTML = 'Occupi la posizione numero ' + position;
