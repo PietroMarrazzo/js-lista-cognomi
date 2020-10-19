@@ -27,21 +27,15 @@ database.sort();
 
 // cycle while to create UL
 var surnames = '';
-var count = 0;
-while (count < database.lenght) {
 
-    var surname = database[count];
+for (var i = 0; i < database.length; i++) {
+    var surname = database[i];
 
     surnames += '<li>' + surname + '</li>';
-
-    // counter cycle
-    count++;
 }
 
-
-document.getElementById("surname-list").innerHTML = surnames;
-
-
+// show UL
+document.getElementById('list').innerHTML = surnames;
 
 
 // surname stamp
